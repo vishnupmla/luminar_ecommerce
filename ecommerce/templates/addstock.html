@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block prdct %}
+	<div class="breadcrumb-section breadcrumb-bg h-25">
+		<div class="container">
+
+					<div class="breadcrumb-text text-center">
+<!--						<p>Fresh and Organic</p>-->
+						<h1>Add Stock</h1>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container shadow mt-4 mb-4 p-3">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table class="table">
+    {{form.as_table}}
+    </table>
+<input type="submit" class="btn mt-3 mb-3">
+</form>
+</div>
+{% endblock %}

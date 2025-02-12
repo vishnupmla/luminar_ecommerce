@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+
+	<!-- search area -->
+
+	<!-- end search arewa -->
+{% block prdct %}
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg h-25">
+		<div class="container">
+
+					<div class="breadcrumb-text text-center">
+						<p>Fresh and Organic</p>
+						<h1>Cart</h1>
+
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+{% endblock %}
+	<!-- cart -->
+{% block content %}
+
+<form method="post">
+	<div class="cart-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-12">
+					<div class="cart-table-wrap">
+						<table class="cart-table">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+									<th class="product-remove"></th>
+									<th class="product-image">Product Image</th>
+									<th class="product-name">Name</th>
+									<th class="product-price">Unit Price</th>
+									<th class="product-quantity">Quantity</th>
+									<th class="product-edt"></th>
+									<th class="product-total">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+
+			{% for i in ct %}
+								<tr class="table-body-row">
+									<td class="product-remove"><a href="{% url 'cart:delitem' i.product.id%}"><i class="far fa-window-close"></i></a></td>
+									<td class="product-image"><img src="{{i.product.image.url}}" alt=""></td>
+									<td class="product-name">{{i.product.name}}</td>
+									<td class="product-price">{{i.product.price}}</td>
+									<td class="product-quantity" ><input type="number" placeholder="1" value="{{i.quantity}}" disabled></td>
+									<td class="product-edt">
+										{% if i.product.stock > 0 %}
+										<a href="{% url 'cart:addtocart' i.product.id %}"><i class="fa-solid fa-circle-plus"></i></a>
+										<a href="{% url 'cart:cartminus' i.product.id %}"><i class="fa-solid fa-circle-minus"></i></a>
+										{% endif %}
+									</td>
+									<td class="product-total">{{i.subTotal}}</td>
+								</tr>
+			{% endfor %}
+                            </tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="total-section">
+						<table class="total-table">
+							<thead class="total-table-head">
+								<tr class="table-total-row">
+									<th>Total</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total-data">
+									<td><strong>Subtotal: </strong></td>
+									<td>{{ttl}}</td>
+								</tr>
+								<tr class="total-data">
+									<td><strong>Shipping: </strong></td>
+									<td>0</td>
+								</tr>
+								<tr class="total-data">
+									<td><strong>Total: </strong></td>
+									<td>{{ttl}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cart-buttons">
+							<a href="{% url 'shop:home' %}" class="boxed-btn black">Shop More</a>
+							<a href="{% url 'cart:checkout' %}" class="boxed-btn black">Check Out</a>
+						</div>
+					</div>
+
+					<div class="coupon-section">
+						<h3>Apply Coupon</h3>
+						<div class="coupon-form-wrap">
+							<form action="index.html">
+								<p><input type="text" placeholder="Coupon"></p>
+								<p><input type="submit" value="Apply"></p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end cart -->
+</form>
+	<!-- logo carousel -->
+	<div class="logo-carousel-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo-carousel-inner">
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/1.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/2.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/3.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/4.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/5.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end logo carousel -->
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block prdct %}
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-3 text-light">About Us</h1>
+            <p class="lead text-light">We are dedicated to providing you with the best shopping experience. Explore our wide range of products and enjoy seamless delivery.</p>
+            <a href="#" class="btn btn-custom">Shop Now</a>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<head>
+        <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'assets/img/bg3.jpg' %}"); /* Add your image URL here */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .mission-section {
+            background: #f8f9fa;
+        }
+        .btn-custom {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .btn-custom:hover {
+            background-color: #ff3b2f;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Our Story Section -->
+    <div class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2023, our eCommerce app started as a small idea to revolutionize online shopping. Today, we are proud to serve millions of customers worldwide, offering a wide range of products from electronics to fashion.</p>
+                </div>
+                <div class="col-md-6">
+    <video autoplay loop muted class="img-fluid rounded">
+        <source src="{% static 'assets/img/vids/1.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Team Section -->
+    <div class="section mission-section">
+        <div class="container">
+            <h2 class="text-center">Our Team</h2>
+            <p class="text-center mb-5">Meet the passionate individuals who make it all possible.</p>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static 'assets/img/team/p1.jpg' %}" alt="Team Member 1" class="img-fluid"> <!-- Add your image here -->
+                    <h4>John Doe</h4>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'assets/img/team/p2.jpg' %}" alt="Team Member 2" class="img-fluid"> <!-- Add your image here -->
+                    <h4>Jane Smith</h4>
+                    <p>Head of Operations</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'assets/img/team/p3.jpg' %}" height="300px" alt="Team Member 3" class="img-fluid"> <!-- Add your image here -->
+                    <h4>Mike Johnson</h4>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Mission Section -->
+    <div class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="" alt="Our Mission" class="img-fluid rounded"> <!-- Add your image here -->
+                </div>
+                <div class="col-md-6">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is simple: to make online shopping easy, enjoyable, and accessible to everyone. We strive to continuously improve our platform and services to meet the needs of our customers.</p>
+                    <a href="#" class="btn btn-custom">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2023 My eCommerce App. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+{% endblock %}
